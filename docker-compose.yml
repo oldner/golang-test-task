@@ -18,3 +18,32 @@ services:
     ports:
       - 6379:6379
     restart: always
+
+  api:
+    build:
+      context: .
+      dockerfile: cmd/api/Dockerfile
+    env_file: .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - rabbitmq
+
+  message-processor:
+    build:
+      context: .
+      dockerfile: cmd/message-processor/Dockerfile
+    env_file: .env
+    depends_on:
+      - rabbitmq
+      - redis
+
+  reporting-api:
+    build:
+      context: .
+      dockerfile: cmd/reporting-api/Dockerfile
+    env_file: .env
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis

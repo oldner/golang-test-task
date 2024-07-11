@@ -5,12 +5,12 @@ package main
 import (
 	"log"
 
-	"golang-test-task/cmd/api/app"
+	"golang-test-task/cmd/message-processor/app"
 )
 
 // Main ////////////////////////////////////////////////////////////////////////
 
-// This function is the entry point to the API service.
+// This function is the entry point to the Message Processor service.
 // It takes care of:
 // - loading the configuration
 // - creating a new application instance
