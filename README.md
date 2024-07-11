@@ -50,22 +50,12 @@ The system allows users to send messages, process them asynchronously, and retri
    cd [project-directory]
    ```
 
-2. Create a `.env` file in the project root and add the necessary environment variables:
-   ```
-   API_PORT=8080
-   REPORTING_API_PORT=8081
-   RABBITMQ_URL=amqp://rabbitmq_user:rabbitmq_password@rabbitmq:5672/
-   REDIS_URL=redis:6379
-   RABBITMQ_DEFAULT_USER=rabbitmq_user
-   RABBITMQ_DEFAULT_PASS=rabbitmq_password
-   ```
-
-3. Build and start the services:
+2. Build and start the services:
    ```
    docker-compose up --build
    ```
 
-4. The services will be available at:
+3. The services will be available at:
    - API Service: http://localhost:8080
    - Reporting API: http://localhost:8081
 
